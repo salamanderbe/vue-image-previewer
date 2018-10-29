@@ -47,6 +47,10 @@
 			"autoprefixer": {}
 		}
 	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/salamanderbe/vue-image-previewer"
+	},
 	"files": [
 		"dist/*",
 		"src/*",
