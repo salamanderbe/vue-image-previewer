@@ -111,6 +111,11 @@
 
 <template>
     <div class="preview-backdrop" v-if="open" @click="close">
+        <span v-show="index !== 0" class="prev arrow"  @click.stop="prev()">
+            <svg data-v-7008925b="" class="svg-inline--fa fa-long-arrow-left fa-w-14" aria-hidden="true" data-prefix="fal" data-icon="long-arrow-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="">
+                <path fill="currentColor" d="M136.97 380.485l7.071-7.07c4.686-4.686 4.686-12.284 0-16.971L60.113 273H436c6.627 0 12-5.373 12-12v-10c0-6.627-5.373-12-12-12H60.113l83.928-83.444c4.686-4.686 4.686-12.284 0-16.971l-7.071-7.07c-4.686-4.686-12.284-4.686-16.97 0l-116.485 116c-4.686 4.686-4.686 12.284 0 16.971l116.485 116c4.686 4.686 12.284 4.686 16.97-.001z"></path>
+            </svg>
+        </span>
         <div class="preview-container">
             <div class="preview-row">
                 <span class="close" @click="close">
@@ -119,22 +124,15 @@
                     </svg>
                 </span>
                 <div @click.stop class="preview-content">
-                    <span v-show="index !== 0" class="prev arrow" @click="prev()">
-                        <svg data-v-7008925b="" class="svg-inline--fa fa-long-arrow-left fa-w-14" aria-hidden="true" data-prefix="fal" data-icon="long-arrow-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="">
-                            <path fill="currentColor" d="M136.97 380.485l7.071-7.07c4.686-4.686 4.686-12.284 0-16.971L60.113 273H436c6.627 0 12-5.373 12-12v-10c0-6.627-5.373-12-12-12H60.113l83.928-83.444c4.686-4.686 4.686-12.284 0-16.971l-7.071-7.07c-4.686-4.686-12.284-4.686-16.97 0l-116.485 116c-4.686 4.686-4.686 12.284 0 16.971l116.485 116c4.686 4.686 12.284 4.686 16.97-.001z"></path>
-                        </svg>
-                    </span>
-
                     <img class="main-img" :src="viewing">
-
-                    <span v-show="index !== images.length - 1" class="next arrow" @click="next()">
-                        <svg data-v-7008925b="" class="svg-inline--fa fa-long-arrow-right fa-w-14" aria-hidden="true" data-prefix="fal" data-icon="long-arrow-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="">
-                            <path fill="currentColor" d="M311.03 131.515l-7.071 7.07c-4.686 4.686-4.686 12.284 0 16.971L387.887 239H12c-6.627 0-12 5.373-12 12v10c0 6.627 5.373 12 12 12h375.887l-83.928 83.444c-4.686 4.686-4.686 12.284 0 16.971l7.071 7.07c4.686 4.686 12.284 4.686 16.97 0l116.485-116c4.686-4.686 4.686-12.284 0-16.971L328 131.515c-4.686-4.687-12.284-4.687-16.97 0z"></path>
-                        </svg>
-                    </span>
                 </div>
             </div>
         </div>
+        <span v-show="index !== images.length - 1" class="next arrow" @click.stop="next()">
+            <svg data-v-7008925b="" class="svg-inline--fa fa-long-arrow-right fa-w-14" aria-hidden="true" data-prefix="fal" data-icon="long-arrow-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="">
+                <path fill="currentColor" d="M311.03 131.515l-7.071 7.07c-4.686 4.686-4.686 12.284 0 16.971L387.887 239H12c-6.627 0-12 5.373-12 12v10c0 6.627 5.373 12 12 12h375.887l-83.928 83.444c-4.686 4.686-4.686 12.284 0 16.971l7.071 7.07c4.686 4.686 12.284 4.686 16.97 0l116.485-116c4.686-4.686 4.686-12.284 0-16.971L328 131.515c-4.686-4.687-12.284-4.687-16.97 0z"></path>
+            </svg>
+        </span>
     </div>
 </template>
 
@@ -219,8 +217,8 @@ export default {
 		},
 		setArrows() {
 			this.$nextTick(function() {
-				document.querySelector('.arrow.prev').style.left = '-' + document.querySelector('.main-img').offsetLeft / 2 + 'px'
-				document.querySelector('.arrow.next').style.right = '-' + document.querySelector('.main-img').offsetLeft / 2 + 'px'
+				document.querySelector('.arrow.prev').style.left = '+' + document.querySelector('.main-img').offsetLeft / 2 + 'px'
+				document.querySelector('.arrow.next').style.right = '+' + document.querySelector('.main-img').offsetLeft / 2 + 'px'
 			})
 		},
 		/*

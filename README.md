@@ -28,7 +28,8 @@ npm install @salamander.be/vue-image-previewer
 </template>
 
 <script>
-import ImagePreviewer from './components/image-previewer'
+import ImagePreviewer from '@salamander.be/vue-image-previewer'
+import '@salamander.be/vue-image-previewer/dist/vue-image-previewer.css'
 
 export default {
 	name: 'app',
@@ -43,7 +44,7 @@ export default {
               'https://picsum.photos/700/500', 
               'https://picsum.photos/800/600', 
               'https://picsum.photos/800/700'
-	      'https://picsum.photos/900/500', 
+	          'https://picsum.photos/900/500', 
               'https://picsum.photos/800/900', 
               'https://picsum.photos/700/900',
               'https://picsum.photos/500/900',

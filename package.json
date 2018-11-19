@@ -3,7 +3,7 @@
 	"description": "A VueJs previewer for images that are not included in the component.",
 	"author": "Frederiek <frederiek@salamander.be>",
 	"license": "MIT",
-	"version": "0.0.1",
+	"version": "0.0.3",
 	"private": false,
 	"main": "./dist/vue-image-previewer.common.js",
 	"keywords": [
